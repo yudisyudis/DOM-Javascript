@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<head>
+    <title>DOM JAVASCRIPT</title>
+</head>
+
+<body>
+    <h1>Materi Hari ke-5 minggu ke-2</h1>
+    <h2>DOM JAVASCRIPT</h2>
+
+    <img src="maxresdefault.jpg" width="300px" id="gambar">
+
+    <div id="box"></div>
+
+    <div class="boxes"></div>
+    <div class="boxes"></div>
+    <div class="boxes"></div>
+
+    <ul>
+        <h3>Materi</h3>
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>Bootsrap</li>
+    </ul>
+
+    <input onclick="berubah()" type="text" id="input">
+    <input type="submit" id="submit">
+    <p>Nama user adalah <span id="span"></span></p>
+    <script>
+        document.getElementById('box').innerHTML = 'Jabar Coding Camp'
+        var boxes = document.getElementsByClassName('boxes');
+        boxes[0].innerHTML = 'Web Development'
+        boxes[1].innerHTML = 'Backend'
+        boxes[2].innerHTML = 'Laravel'
+
+        var list = document.getElementsByTagName('li');
+        list[0].innerHTML = 'HTML 5'
+        list[1].innerHTML = 'CSS 3'
+        list[2].innerHTML = 'Bootstrap 4'
+
+        var img = document.getElementById('gambar');
+        img.width = 400
+
+        var input = document.getElementById('input');
+        input.value = "Nama lengkap"
+        input.style.border = '5px solid black'
+        img.style.border = '5px dashed red'
+
+        img.addEventListener('click',function(){
+            img.style.border = 'solid'
+        });
+
+        img.addEventListener('mouseenter',function(){
+            img.style.border = 'solid blue'
+        });
+
+        function berubah(){
+            input.style.border = 'dashed'
+        };
+
+        var submit = document.getElementById('submit');
+        var span = document.getElementById('span');
+
+        submit.onclick = function(){
+            var isi = input.value;
+            span.innerHTML = isi;
+        };
+    </script>
+</body>
